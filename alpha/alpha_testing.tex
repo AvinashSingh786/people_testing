@@ -134,12 +134,13 @@ This document notes the conclusions, made by Team people for the testing phase, 
 
 \section{Architecture compliance analysis}
 	\subsection{Software Architecture Specifications Adherence}
-	In their code they provided well for persistence.
-	@TODO
+	\begin{itemize}
+		\item In their code they provided well for persistence.
+		\item An in-memory Derby Database was created for testing purposes.
+	\end{itemize}
 	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
 	\begin{itemize}
-		\item A PosgreSQL database was implemented, however ORM was used to connect to this database, which completely goes against the architecture constraints.
-		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violats one of the architectural requirements.
+		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
 	\end{itemize}
 
 	\subsection{Missing aspects of the Software Architecture Specifications}
@@ -147,6 +148,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item Dependency injection framework was not implemented
 		\item No method was used to implement connection pooling to the database
 		\item Object-relational mapping was not utilized
+		\item There is no sign of resource pooling in the implementation
 
 	\end{itemize}
 	
