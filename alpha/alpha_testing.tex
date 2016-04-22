@@ -116,7 +116,11 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	\end{itemize}
 
     \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
-	      @TODO
+	\begin{itemize}
+	
+	    \item@TODO
+
+	\end{itemize}
 
     \subsection{Missing Functionality}
 	From the scope provided to Team Alpha People the following functionality was missing:
@@ -135,12 +139,22 @@ This document notes the conclusions, made by Team people for the testing phase, 
 \section{Architecture compliance analysis}
 	\subsection{Software Architecture Specifications Adherence}
 	\begin{itemize}
-		\item In their code they provided well for persistence.
+
+	\item Persistence was implemented correctly in which they had id generation, which provides unique access to a specific object so there can be modification, however this module did not implement this and could have been done without much effort. 
+
+			\item In their code they provided well for persistence.
 		\item An in-memory Derby Database was created for testing purposes.
+	\item@TODO
+
 	\end{itemize}
+
 	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
+
 	\begin{itemize}
+
+		\item Unit tests were not implemented correctly and took great difficulty to get working, unit test were not structured properly and was not testing all the aspects of their code implemented, their unit test was also very trivial since they used persistence they could have done more testing but they only created 3 Mock objects and put it into the database and only tested if they could accesss the last one, it could be that the database was incorreclty setup which will influence the overall test.
 		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
+		\item@TODO
 	\end{itemize}
 
 	\subsection{Missing aspects of the Software Architecture Specifications}
@@ -149,9 +163,21 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item No method was used to implement connection pooling to the database
 		\item Object-relational mapping was not utilized
 		\item There is no sign of resource pooling in the implementation
-
+		\item@TODO
 	\end{itemize}
 	
+
+
+
+
+
+
+
+
+
+
+
+
    	% \newpage
 
 \section{Conclusion}
