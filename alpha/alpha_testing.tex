@@ -98,9 +98,62 @@ University of Pretoria
 %Content
 \setcounter{page}{1}
 \section{Introduction}
+This document notes the conclusions, made by Team people for the testing phase, for Team Alpha's people module with regard to functional and architecture analysis. \\
 
 \newpage
 
+\section{Functional Testing Report}
+	\subsection{Introduction}
+	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimise understanding of collaborators on the project.\\
+
+	\subsection{Correctly implemented Functionality}
+	From the scope provided to Team Alpha People the following functionality was provided:
+	\begin{itemize}
+		\item addPerson
+		\item endResearchGroupAssociation
+		\item addResearchGroupAssociation
+		\item addResearchCategory
+	\end{itemize}
+
+    \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
+	      @TODO
+
+    \subsection{Missing Functionality}
+	From the scope provided to Team Alpha People the following functionality was missing:
+	\begin{itemize}
+		\item editPerson
+		\item reactivateResearchGroup
+		\item suspendResearchGroup
+		\item addResearchGroup
+		\item modifyResearchCategory
+	\end{itemize}
+
+    
+
+   % \newpage
+
+\section{Architecture compliance analysis}
+	\subsection{Software Architecture Specifications Adherence}
+	In their code they provided well for persistence.
+	@TODO
+	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
+	\begin{itemize}
+		\item A PosgreSQL database was implemented, however ORM was used to connect to this database, which completely goes against the architecture constraints.
+		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violats one of the architectural requirements.
+	\end{itemize}
+
+	\subsection{Missing aspects of the Software Architecture Specifications}
+	\begin{itemize}
+		\item Dependency injection framework was not implemented
+		\item No method was used to implement connection pooling to the database
+		\item Object-relational mapping was not utilized
+
+	\end{itemize}
+	
+   	% \newpage
+
 \section{Conclusion}
+Our overall conclusion was that the code was very convoluted and complex in many cases where it could be very simple, easy to understand and easy to implement. The code was not well documented which caused great difficulty for us to understand and figure out. The main interface User.java we felt was very incomplete as it should provide a means to make use of all the functionality specified in the scope which it did not. We felt this group lacked the understanding of how the system operates and how the People module would be incorporated into the system. They did not provide any functionality towards management of Rearch Groups. They provided management for Researcher Categories in the People interface which supports our first statement of their code being convoluted. They catered well for Membership Management of individual people
+@COMPLETE
 
 \end{document}
