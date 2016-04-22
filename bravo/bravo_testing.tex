@@ -29,7 +29,7 @@
 %Details
 \title{
 Researcher Support System (RSS)\\
-Functional Testing Report and Architecture Compliance Analysis
+Functional Testing and Architecture Compliance Analysis Report
 %University of Pretoria
 }
 \date{2016-04-15}
@@ -47,7 +47,7 @@ Functional Testing Report and Architecture Compliance Analysis
 		[0.3cm]
 		\textsc{\Large
 			Researcher Support System (RSS)\\
-			Functional Testing Report and Architecture Compliance Analysis
+			Functional Testing and Architecture Compliance Analysis Report
 			%University of Pretoria
 		}\\
 		[0.1cm]
@@ -74,7 +74,6 @@ Functional Testing Report and Architecture Compliance Analysis
 %Content
 \setcounter{page}{1}
 \section{Introduction}
-
 Introductory paragraph
 
 \newpage
@@ -82,10 +81,55 @@ Introductory paragraph
 \section{Functional Testing Report}
 
 	\subsection{Correctly implemented Functionality}
-	content
+	
+		\subsubsection{persons}
+			\begin{itemize}
+			\item addPerson
+			\item editPersonDetails
+			\end{itemize}
+		\subsubsection{membershipManagement}
+			\begin{itemize}
+			\item endResearchGroupAssociation
+			\item addResearchGroupAssociation
+			\end{itemize}
+		\subsubsection{researchCategories}
+		ResearchCategoryAssociation was not implemented as specified in the domain model. With no reference to ResearcherCategory and ResearcherCategoryState. Instead it appears they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion they have not adhered to the functional requirements.
+			\begin{itemize}
+			\item addResearchCategory
+			\item modifyResearchCategory
+			\end{itemize}
+		\subsubsection{researchGroups}
+			\begin{itemize}
+			\item addResearchGroup
+			\item suspendResearchGroup
+			\item reactivateResearchGroup
+			\end{itemize}
+
+
 
     \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
-    content
+    
+    	\subsubsection{persons}
+			\begin{itemize}
+			\item addPerson
+			\item editPersonDetails
+			\end{itemize}
+		\subsubsection{membershipManagement}
+			\begin{itemize}
+			\item endResearchGroupAssociation
+			\item addResearchGroupAssociation
+			\end{itemize}
+		\subsubsection{researchCategories}
+			\begin{itemize}
+			\item addResearchCategory
+			\item modifyResearchCategory
+			\end{itemize}
+		\subsubsection{researchGroups}
+			\begin{itemize}
+			\item addResearchGroup
+			\item suspendResearchGroup
+			\item reactivateResearchGroup
+			\end{itemize}
 
     \subsection{Missing Functionality}
     content
@@ -105,7 +149,5 @@ Introductory paragraph
    	\newpage
 
 \section{Conclusion}
-
-Conclusion
 
 \end{document}
