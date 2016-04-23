@@ -69,6 +69,11 @@ Functional Testing and Architecture Compliance Analysis Report
 	u13325095\\ 
 	}
 	
+	\textsc{\large\\
+		Andreas du Preez\\ 
+		u12207871\\ 
+	}
+	
 	\end{flushright}
 \end{titlepage}
 
@@ -147,7 +152,20 @@ Introductory paragraph
 
      \subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
 
-     @ToDo
+     \subsubsection{Decomposition of the System}
+     The code that was written is not fully separated by core architectural components. Currently the Access Layer, Business Process Layer, Persistence Access Layer and Persistence Layer are all grouped together and is difficult to test separately. So Separation of concern is not adhered to.
+     
+     \subsubsection{Maintainability}
+     The code is partially maintainable because no connections are made to the database connection pool to get the database schema. If changes were to be made to the database a lot of the code will need to change as well.
+
+	\subsubsection{Deployability}
+	This unit is currently hard coded for this specific database persistence and cannot quickly be changed to adapt to a new database.
+	
+	\subsubsection{Testability}
+	The current JUnit testing is done with limited test cases and is not fully tested. There will be a few cases which is not tested for and will fail during run time of this unit.
+	
+	\subsubsection{Frameworks and Technologies}
+	JPA persistence is implemented but for a JavaSE application and not JavaEE application. As soon as the database changes, a lot of code will also need to change because no connection pooling was used. Object-relational mapping, query mapping and JPQL was used in this unit but no instance of object caching and transaction support was used.
 
      \subsection{Missing aspects of the Software Architecture Specifications}
 	\begin{itemize}
@@ -156,6 +174,7 @@ Introductory paragraph
 		\item addResearchGroup: not implemented
 		\item addResearchCategory: not implemented
 		\item addResearchGroupAssociation: not implemented
+		\item Auditability: not implemented
 	\end{itemize}
 
 \section{Conclusion}
