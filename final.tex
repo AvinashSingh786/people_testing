@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{multicol}
 \usepackage{multicol}
+\usepackage{hyperref}
 %Margins
 \usepackage[
 	margin=2cm,
@@ -30,11 +31,11 @@
 %Details
 \title{
 Researcher Support System (RSS)
-Funcitonal and Achitectural Evaluation and Testing
-University of Pretoria
-}
+Functional and Architectural Evaluation and Testing
+University of Pretoria\\}
 \date{2016-04-15}
-\author{\huge Team People}
+\author{\huge Team People }
+
 
 %Document start
 \begin{document}
@@ -118,6 +119,10 @@ University of Pretoria
 					
 	\end{multicols}
 	
+
+	\textsc{	\\ \href{https://github.com/AvinashSingh786/people_testing.git}{GitHub}
+		\textit{https://github.com/AvinashSingh786/COS301-Alpha.git}}
+
 	\end{center}
 \end{titlepage}
 
@@ -328,7 +333,7 @@ After studying the code, the first conclusion to be arrived at was the fact that
 		
 	\end{center}
 	\begin{flushright}
-		\textsc{\Large
+		\textsc{\large
 			Quinton Weenink\\ 
 			u13176545\\
 		}
@@ -351,7 +356,7 @@ After studying the code, the first conclusion to be arrived at was the fact that
 	\end{flushright}
 \end{titlepage}
 
-
+\setcounter{page}{5}
 \section{Introduction}
 This document notes the conclusions made by Team people during the testing phase, for Team Bravo's People module; with regard to functional and architectural analysis. \\
 
@@ -416,7 +421,7 @@ With reference to pre- and post-conditions, the following functionality has not 
 
 \section{Architecture compliance analysis}
 \subsection{Software Architecture Specifications Adherence}
-With reference to architecture specifications, the implementation of Persons, the code follows the given specification. As functions, such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly, according to the specificationn. Though it must be noted that some related functionality such "User" were not completely implemented.
+With reference to architecture specifications, the implementation of Persons, the code follows the given specification. As functions, such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly, according to the specification. Though it must be noted that some related functionality such "User" were not completely implemented.
 
 \subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
 
@@ -449,7 +454,7 @@ JPA persistence is implemented but for a JavaSE application and not JavaEE appli
 \subsection{Functional Testing Report}
 Overall, team bravo did not adhere to most of the design and architectural specifications. Not only are most of the add functions not implemented in most objects which is one of the main functions for the whole research project. Failure to add anything would mean a potentially empty database and empty objects which would provide no use to any user. Amongst other things many of the implemented functions are actually partially implemented and still means that the majority of the code has not been implemented.
 \subsection{Architecture compliance analysis}
-The Architecture requirements was adhered to more than the functional requirements however, still lacked the ability to follow direct guidelines set out by the client. As expected, since the adding functionalities are not added their architectures are non-existent too. Many of the functions data was hard coded which means reusability of the code is poor. 
+The Architecture requirements was adhered to more than the functional requirements however, still lacked the ability to follow direct guidelines set out by the client. As expected, since the adding functionalities are not added their architectures are non-existent too. Many of the functions data was hard coded which means re-usability of the code is poor. 
 
 
 \end{document}
