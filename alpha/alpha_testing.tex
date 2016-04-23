@@ -91,9 +91,11 @@ University of Pretoria
 \end{titlepage}
 
 %Table of contents
+ 
 \tableofcontents
 \thispagestyle{empty}
 \cleardoublepage
+
 
 %Content
 \setcounter{page}{1}
@@ -104,28 +106,28 @@ This document notes the conclusions, made by Team people for the testing phase, 
 
 \section{Functional Testing Report}
 	\subsection{Introduction}
-	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimise understanding of collaborators on the project.\\
+	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimize understanding of collaborators on the project.\\
 
 	\subsection{Correctly implemented Functionality}
 	\subsubsection{Scope}
 	From the scope provided to Team Alpha People the following functionality was provided:
 	\begin{itemize}
 		\item addPerson - was found in User.java that followed the correct structure and exception handling was provided for all cases that would be thrown if invalid data was passed through, there is also error checking for invalid email addresses using regex.
-		\item endResearchGroupAssociation - was found in Person.java where the function took all the neccessary parameters needed to provide the functionality through the information passed through, again there was exception handling which is a good mechanism to detect faults early on in the execution.
+		\item endResearchGroupAssociation - was found in Person.java where the function took all the necessary parameters needed to provide the functionality through the information passed through, again there was exception handling which is a good mechanism to detect faults early on in the execution.
 		\item addResearchGroupAssociation - found in Person.java also provided exceptions for all cases.
 		\item addResearchCategory - found in Person.java also provided exceptions for all cases.
 		
 	\end{itemize}
 	
 	\subsubsection{Domain Model}
-	From the Domain model provided to Team Alpha People the following structre was provided:
+	From the Domain model provided to Team Alpha People the following structure was provided:
 	\begin{itemize}
 	 \item ResearchGroupAssociation - which consists of a start date and a end date and the getters and setters.
-	 \item ResearchGroupAssociationType - which is a emumeration class that contains the type of user, and followed the relationship in the model.
+	 \item ResearchGroupAssociationType - which is a enumeration class that contains the type of user, and followed the relationship in the model.
 	 \item Group - this class was just basic containing meta data about the group.
 	 \item Entity - this was just an empty interface which other classes either extended or implemented, there should have been at least one function in the entity which was not provided.
 	 \item User - the class that contained all the information about a user, it contained 'name', 'surname','email' which was needed.
-	 \item Organisation - was just a simple class that contained meta data about the organisation.
+	 \item Organization - was just a simple class that contained meta data about the organization.
 	 \item ResearcherCatogoryAssociation - was just a simple class that contained the effective date and the type
 	 \item ResearcherCatogory - has the relationship with ResearcherCatogoryStatus and ResearcherCatogoryAssociation as a middle-man for communication between them
 	 
@@ -139,10 +141,10 @@ This document notes the conclusions, made by Team people for the testing phase, 
     \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
 	\begin{itemize}
 	
-	    \item During the analasys of the people module we found that there was no error checking for null object which is a potential threat to the system since that there could have a faliure in an object creation and hence can cause the entire system to crash.
+	    \item During the analysis of the people module we found that there was no error checking for null object which is a potential threat to the system since that there could have a failure in an object creation and hence can cause the entire system to crash.
 	    \item A potential issue is that making a User an Admin is not secure since its a public function which can be exploited.
-	    \item For all the GroupAssociation operations it wasn't correctly implemented since they added a copy of the class (this) to a list, this is a bad approach and can lead to duplicates as well as data invalidation.
-	    \item For the User object getters and setters are implemented in the PersonImplementation.java, it should have been implemented on its own seperated from Persons since it is supposed to be abstract. 
+	    \item For all the GroupAssociation operations it was not correctly implemented since they added a copy of the class (this) to a list, this is a bad approach and can lead to duplicates as well as data invalidation.
+	    \item For the User object getters and setters are implemented in the PersonImplementation.java, it should have been implemented on its own separated from Persons since it is supposed to be abstract. 
 
 	\end{itemize}
 
@@ -158,9 +160,9 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	\end{itemize}
 	
 	\subsubsection{Domain Model}
-	From the Domain model provided to Team Alpha People the following structre was not provided:
+	From the Domain model provided to Team Alpha People the following structure was not provided:
 	\begin{itemize}
-		\item Person - Accoring to the Domain Model there should be a User object in a Person Object which was not implemented correctly since they did not have the object in Person but rather added all the functionality of the User class to Person class which defeats the purpose of creating the User mock class.
+		\item Person - According to the Domain Model there should be a User object in a Person Object which was not implemented correctly since they did not have the object in Person but rather added all the functionality of the User class to Person class which defeats the purpose of creating the User mock class.
 		\item EmailAddress - there was no email address class implemented or created anywhere however they just had a string containing the email address.
 		\item ResearcherCatogoryStatus - an empty interface with no implementation
 	 \end{itemize}
@@ -188,7 +190,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 
 	\begin{itemize}
 
-		\item Unit tests were not implemented correctly and took great difficulty to get working, unit test were not structured properly and was not testing all the aspects of their code implemented, their unit test was also very trivial since they used persistence they could have done more testing but they only created 3 Mock objects and put it into the database and only tested if they could accesss the last one, it could be that the database was incorreclty setup which will influence the overall test.
+		\item Unit tests were not implemented correctly and took great difficulty to get working, unit test were not structured properly and was not testing all the aspects of their code implemented, their unit test was also very trivial since they used persistence they could have done more testing but they only created 3 Mock objects and put it into the database and only tested if they could access the last one, it could be that the database was incorrectly setup which will influence the overall test.
 		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
 		\item@TODO
 	\end{itemize}
@@ -200,7 +202,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item Object-relational mapping was not utilized
 		\item There is no sign of resource pooling in the implementation
 		\item There is no support for transactions
-		\item There is no sign of JPQL qeuries which indicates that qeury mapping was not done
+		\item There is no sign of JPQL queries which indicates that query mapping was not done
 		\item@TODO
 	\end{itemize}
 	
