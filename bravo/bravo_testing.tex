@@ -62,16 +62,10 @@ Functional Testing and Architecture Compliance Analysis Report
 	\textsc{\Large
 	Quinton Weenink\\ 
 	u13176545\\
-	}
-	
-	\textsc{\large\\
 	Elton Tom\\ 
 	u13325095\\ 
-	}
-	
-	\textsc{\large\\
-		Andreas du Preez\\ 
-		u12207871\\ 
+	Andreas du Preez\\ 
+	u12207871\\ 
 	}
 	
 	\end{flushright}
@@ -91,6 +85,8 @@ This document notes the conclusions made by Team people during the testing phase
 
 \section{Functional Testing Report}
 
+	As can be seen by the following sections unfortunately this team failed to implement the required functionality. As a result of this the evaluation of the classes provided was taken up and an attempt to provide some report on the provided code.
+
 	\subsection{Correctly implemented Functionality}
 	
 	none
@@ -100,24 +96,25 @@ This document notes the conclusions made by Team people during the testing phase
     	On first observations, one can quickly see that none of the scoped functional specifications have been implemented or in any way represent what was specified in the Persons section. There were some attempts to test the individual classes such testing Person's constructor and mutator, but no attempts were made to actually implement the functionality that is crucial to the success of the project.
 	
 		\subsubsection{persons}
-		With reference to the domain model specified in the functional specifications, one can quickly identify that it was not adhered to; with no specialization of Entity. Email addresses are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly, was the aggregation of a Group entity to its composition.
+		With reference to the domain model specified in the functional specifications, one can quickly identify that it was not adhered to, with no specialization of Entity. Email addresses are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly, was the aggregation of a Group entity to its composition even tho the entity wasn't implemented correctly I will try highlight that which was completed correctly.
 
 		\subsubsection{membershipManagement}
 		As specified in the domain model, both the use of a ResearchGroupAssociation enables the adding and ending of a Research Group in accordance to a start and end date. Making use of a enumeration in order to make reference to the ResearchGroupAssociationType, which is once again not as specified in the functional specifications. 
 
 		\subsubsection{researchCategories}
-		ResearchCategoryAssociation was not implemented as specified in the domain model; with no reference to ResearcherCategory and ResearcherCategoryState. Instead, it appears as though they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion, they have not adhered to the functional requirements. Additionally, ResearchCategoryAssociation makes reference to a ResearchGroupType, which in the domain model has nothing to do with Research Groups.
+		ResearchCategoryAssociation was not implemented as specified in the domain model, with no reference to ResearcherCategory and ResearcherCategoryState. Instead, it appears as though they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER in stead of an association to ResearchCategory. Unless the team was instructed to implement it in this fashion, they have not adhered to the functional requirements. Additionally, ResearchCategoryAssociation makes reference to a ResearchGroupType, which in the domain model has nothing to do with Research Groups. Additionally person does not have a ResearchGroupAssociation.
 
 		While the Research Category classes have been implemented and appear to work according to satisfy their "unit tests", due to their lack of implementation of addResearchCategory. Along with this, most other functional requirements cannot be properly tested with reference to pre- and post-conditions
 
 		\subsubsection{researchGroups}
 
-		Instead of aggregation, the team made use of composition which, again, is not what was specified.
+		Instead of aggregation, the team made use of composition which, again, is not what was specified. Once again it appears they have both over simplified and over complicated elements of researchGroups instead of just adhering to the domain model. In this case a Group does not even inherit from an Entity.
 
+		Finally Organizations are not an association of a Person but more of a aggregation again not as specified in the domain model.
 
     \subsection{Missing Functionality}
 
-    With reference to pre- and post-conditions, the following functionality has not been implemented. The code that was reviewed have no actual implementation at all; the functions addPerson() or endResearchGroupAssociation() have no code.
+    With reference to pre- and post-conditions, the following functionality has not been implemented. The code that was reviewed have no actual implementation at all. The functions addPerson() or endResearchGroupAssociation() have no code.
 	
 		\subsubsection{persons} 
 			\begin{itemize}
