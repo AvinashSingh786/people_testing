@@ -246,12 +246,12 @@ includefoot
 	\subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
 	\begin{itemize}
 		
-		\item During the analysis of the people module we found that there was no error checking for null object which is a potential threat to the system since that there could have a failure in an object creation and hence can cause the entire system to crash.
-		\item A potential issue is that making a User an Admin is not secure since its a public function which can be exploited.
-		\item For all the GroupAssociation operations it was not correctly implemented since they added a copy of the class (this) to a list, this is a bad approach and can lead to duplicates as well as data invalidation.
-		\item For the User object getters and setters are implemented in the PersonImplementation.java, it should have been implemented on its own separated from Persons since it is supposed to be abstract. 
-		\item The exception classes that were implemented did not cover all of the possible errors that can occur when creating a Person. For example, there were no checks done to verify whether a valid name was provided (it is possible to send in an empty string) and thus there was no exception class that deals with this matter.
-		
+		\item During the analysis of the people module, we found that there was no error checking for null object which is a potential threat to the system since there could have been a failure in an object's creation. This could lead to the entire system crashing.
+	\item A potential issue is that making a User an Admin is not secure since it's a public function which can be exploited.
+	\item For all the GroupAssociation operations, it was not correctly implemented, since they added a copy of the class (this) to a list. This is a bad approach and can lead to duplicates as well as data invalidation.
+	\item For the User object, getters and setters are implemented in the PersonImplementation.java. It should have been implemented on its own, separated from Persons since it is supposed to be abstract. 
+	\item The exception classes that were implemented did not cover all of the possible errors that can occur when creating a Person. For example, there were no checks done to verify whether a valid name was provided (it is possible to send in an empty string) and thus there was no exception class that deals with this matter.
+	
 	\end{itemize}
 	
 	\subsection{Missing Functionality}
@@ -268,27 +268,27 @@ includefoot
 	\subsubsection{Domain Model}
 	From the Domain model provided to Team Alpha People the following structure was not provided:
 	\begin{itemize}
-		\item Person - According to the Domain Model there should be a User object in a Person Object which was not implemented correctly since they did not have the object in Person but rather added all the functionality of the User class to Person class which defeats the purpose of creating the User mock class.
-		\item EmailAddress - there was no email address class implemented or created anywhere however they just had a string containing the email address.
-		\item ResearcherCategoryStatus - an empty interface with no implementation
+		\item Person - According to the Domain Model, there should be a User object in a Person Object, which was not implemented correctly, since they did not have the object in Person, but rather added all the functionality of the User class to Person class. This defeats the purpose of creating the User mock class.
+	\item EmailAddress - there was no email address class implemented or created anywhere, however they just had a string containing the email address.
+	\item ResearcherCategoryStatus - an empty interface with no implementation
 	\end{itemize}
 	\newpage
 	\section{Architecture compliance analysis}
 	\subsection{Software Architecture Specifications Adherence}
 	\begin{itemize}
 		
-		\item Persistence was implemented correctly in which they had id generation, which provides unique access to a specific object so there can be modification, however this module did not implement this and could have been done without much effort. 
-		\item JPA - this was implemented correctly and was consistent, they created a orm.xml for the Object Relational Mapping for the database done by the entity manager. They used a in memory database for testing, which is an easier method and is ideal since it is only used for testing purposes.
-		
+		\item Persistence was implemented correctly, in which they had id generation, which provides unique access to a specific object so there can be modification. However this module did not implement this and could have been done without much effort. 
+	\item JPA - this was implemented correctly and was consistent. They created a orm.xml for the Object Relational Mapping for the database, done by the entity manager. They used an in memory database for testing, which is an easier method and is ideal since it is only used for testing purposes.
+	
 	\end{itemize}
 	
 	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
 	
 	\begin{itemize}
 		
-		\item Unit tests were not implemented correctly and took great difficulty to get working, unit test were not structured properly and was not testing all the aspects of their code implemented, their unit test was also very trivial since they used persistence they could have done more testing but they only created 3 Mock objects and put it into the database and only tested if they could access the last one, it could be that the database was incorrectly setup which will influence the overall test.
-		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
-	\end{itemize}
+		\item Unit tests were not implemented correctly and took great difficulty to get them working. Unit tests were not structured properly and were not testing all the aspects of their code implementationn. Their unit test was also very trivial since they used persistence. They could have done more testing, but they only created 3 Mock objects and put them into the database. They only tested if they could access the last one. It could be that the database was incorrectly set up, which will influence the overall test.
+	\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
+\end{itemize}
 	
 	\subsection{Missing aspects of the Software Architecture Specifications}
 	\begin{itemize}
@@ -301,8 +301,8 @@ includefoot
 	
 	
 	\section{Conclusion}
-	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimize understanding of collaborators on the project.  Our overall conclusion was that the code was very convoluted and complex in many cases where it could be very simple, easy to understand and easy to implement. The code was not well documented which caused great difficulty for us to understand and figure out. The main interface User.java we felt was very incomplete as it should provide a means to make use of all the functionality specified in the scope which it did not. We felt this group lacked the understanding of how the system operates and how the People module would be incorporated into the system. They did not provide any functionality towards management of Research Groups. They provided management for Researcher Categories in the People interface which supports our first statement of their code being convoluted. They catered well for Membership Management of individual people.
-	
+	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimize understanding of collaborators on the project.  Our overall conclusion was that the code was very convoluted and complex in many cases where it could be very simple, easy to understand and easy to implement. The code was not well documented, which caused great difficulty for us to understand. The main interface User.java we felt was very incomplete as it should provide a means to make use of all the functionality specified in the scope, which it did not. We felt this group lacked the understanding of how the system operates and how the People module would be incorporated into the system. They did not provide any functionality towards management of Research Groups. They provided management for Researcher Categories in the People interface which supports our first statement of their code being convoluted. They catered well for Membership Management of individual people.
+
 	
 	\newpage
 	
@@ -332,7 +332,7 @@ includefoot
 			} \\
 			
 		\end{center}
-		\begin{flushright}
+		\begin{center}
 			\textsc{\large
 				Quinton Weenink\\ 
 				u13176545\\
@@ -358,108 +358,123 @@ includefoot
 	 			Joseph Potgieter\\
 	 			u12003672\\
  			}
-		\end{flushright}
+		\end{center}
 	\end{titlepage}
 	
 	\setcounter{page}{5}
 	\section{Introduction}
-	This document notes the conclusions made by Team people during the testing phase, for Team Bravo's People module; with regard to functional and architectural analysis. \\
+This document notes the conclusions, made by Team people for the testing phase, for Team Bravo's people module with regard to functional and architecture analysis. It documents conclusions made by Team people with regard to the following points:
+
+\begin{itemize}
+	\item to what extent the functional requirements as per the functional specification have been met
+	\begin{itemize}
+		\item the functionality which has been correctly implemented
+		\item short-comings of the implemented functionality (with     reference to the pre- and post-conditions)
+		\item missing functionality
+	\end{itemize}
 	
-	
+	\item to what extent the module implementation complies to the specified architecture
+	\begin{itemize}
+		\item which aspects of the software architecture specification were adhered to
+		\item which aspects of the software architecture specification were partially complied to 
+		\item any short comings with respect to the specification
+		\item which aspects of the software architecture were not implemented
+	\end{itemize}
+\end{itemize}
 	
 	\section{Functional Testing Report}
-	
-	\subsection{Correctly implemented Functionality}
-	
-	none
-	
-	\subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
-	
-	On first observations, one can quickly see that none of the scoped functional specifications have been implemented or in any way represent what was specified in the Persons section. There were some attempts to test the individual classes such testing Person's constructor and mutator, but no attempts were made to actually implement the functionality that is crucial to the success of the project.
-	
-	\subsubsection{persons}
-	With reference to the domain model specified in the functional specifications, one can quickly identify that it was not adhered to; with no specialization of Entity. Email addresses are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly, was the aggregation of a Group entity to its composition.
-	
-	\subsubsection{membershipManagement}
-	As specified in the domain model, both the use of a ResearchGroupAssociation enables the adding and ending of a Research Group in accordance to a start and end date. Making use of a enumeration in order to make reference to the ResearchGroupAssociationType, which is once again not as specified in the functional specifications. 
-	
-	\subsubsection{researchCategories}
-	ResearchCategoryAssociation was not implemented as specified in the domain model; with no reference to ResearcherCategory and ResearcherCategoryState. Instead, it appears as though they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion, they have not adhered to the functional requirements. Additionally, ResearchCategoryAssociation makes reference to a ResearchGroupType, which in the domain model has nothing to do with Research Groups.
-	
-	While the Research Category classes have been implemented and appear to work according to satisfy their "unit tests", due to their lack of implementation of addResearchCategory. Along with this, most other functional requirements cannot be properly tested with reference to pre- and post-conditions
-	
-	\subsubsection{researchGroups}
-	
-	Instead of aggregation, the team made use of composition which, again, is not what was specified.
-	\newpage
-	
-	\subsection{Missing Functionality}
-	
-	With reference to pre- and post-conditions, the following functionality has not been implemented. The code that was reviewed have no actual implementation at all; the functions addPerson() or endResearchGroupAssociation() have no code.
-	
-	\subsubsection{persons} 
-	\begin{itemize}
-		\item addPerson: not implemented
-		\item editPersonDetails: not implemented
-	\end{itemize}
-	
-	\subsubsection{membershipManagement}
-	\begin{itemize}
-		\item endResearchGroupAssociation: not implemented
-		\item addResearchGroupAssociation: not implemented
-	\end{itemize}
-	
-	\subsubsection{researchCategories}
-	\begin{itemize}
-		\item addResearchCategory: not implemented
-		\item modifyResearchCategory: not implemented
-	\end{itemize}
-	
-	\subsubsection{researchGroups}
-	\begin{itemize}
-		\item addResearchGroup: not implemented
-		\item suspendResearchGroup: not implemented
-		\item reactivateResearchGroup: not implemented
-	\end{itemize}
-	
-	\newpage
-	
-	\section{Architecture compliance analysis}
-	\subsection{Software Architecture Specifications Adherence}
-	With reference to architecture specifications, the implementation of Persons, the code follows the given specification. As functions, such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly, according to the specification. Though it must be noted that some related functionality such "User" were not completely implemented.
-	
-	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
-	
-	\subsubsection{Decomposition of the System}
-	The code that was written is not fully separated by core architectural components. Currently the Access Layer, Business Process Layer, Persistence Access Layer and Persistence Layer are all grouped together and is difficult to test separately. So Separation of concern is not adhered to.
-	
-	\subsubsection{Maintainability}
-	The code is partially maintainable because no connections are made to the database connection pool to get the database schema. If changes were to be made to the database a lot of the code will need to change as well.
-	
-	\subsubsection{Deployability}
-	This unit is currently hard coded for this specific database persistence and cannot quickly be changed to adapt to a new database.
-	
-	\subsubsection{Testability}
-	The current JUnit testing is done with limited test cases and is not fully tested. There will be a few cases which is not tested for and will fail during run time of this unit.
-	
-	\subsubsection{Frameworks and Technologies}
-	JPA persistence is implemented but for a JavaSE application and not JavaEE application. As soon as the database changes, a lot of code will also need to change because no connection pooling was used. Object-relational mapping, query mapping and JPQL was used in this unit but no instance of object caching and transaction support was used.
-	
-	\subsection{Missing aspects of the Software Architecture Specifications}
-	\begin{itemize}
-		\item user: partially implemented
-		\item Object-relational mapping was not fully utilized
-		\item addResearchGroup: not implemented
-		\item addResearchCategory: not implemented
-		\item addResearchGroupAssociation: not implemented
-		\item Auditability: not implemented
-	\end{itemize}
-	
-	\section{Conclusion}
-	\subsection{Functional Testing Report}
-	Overall, team bravo did not adhere to most of the design and architectural specifications. Not only are most of the add functions not implemented in most objects which is one of the main functions for the whole research project. Failure to add anything would mean a potentially empty database and empty objects which would provide no use to any user. Amongst other things many of the implemented functions are actually partially implemented and still means that the majority of the code has not been implemented.
-	\subsection{Architecture compliance analysis}
-	The Architecture requirements was adhered to more than the functional requirements however, still lacked the ability to follow direct guidelines set out by the client. As expected, since the adding functionalities are not added their architectures are non-existent too. Many of the functions data was hard coded which means re-usability of the code is poor. 
-	
-	
+
+\subsection{Correctly implemented Functionality}
+
+N/A
+
+\subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
+
+Upon first observations, one can quickly see that none of the scoped functional specifications have been implemented, or in any way represent what was specified in the Persons section. There were some attempts to test the individual classes, such as testing Person's constructor and mutator. No attempts were made to actually implement the functionality that is crucial to the success of the project.
+
+\subsubsection{persons}
+With reference to the domain model, specified in the functional specifications, one can quickly identify that it was not adhered to; with no specialization of Entity. Email addresses are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly, was the aggregation of a Group entity to its composition.
+
+\subsubsection{membershipManagement}
+As specified in the domain model, the use of a ResearchGroupAssociation enables the adding and ending of a Research Group in accordance to a start and end date. Making use of an enumeration, in order to create references to the ResearchGroupAssociationType, which does not conform to the functional specifications. 
+
+\subsubsection{researchCategories}
+ResearchCategoryAssociation was not implemented as specified in the domain model; with no reference to ResearcherCategory and ResearcherCategoryState. Instead, it appears as though they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion, they have not adhered to the functional requirements. Additionally, ResearchCategoryAssociation makes reference to a ResearchGroupType, which in the domain model has nothing to do with Research Groups.
+
+While the Research Category classes have been implemented and appear to satisfy their unit tests, they lack an implementation of addResearchCategory. Along with this, most other functional requirements cannot be properly tested with reference to pre- and post-conditions
+
+\subsubsection{researchGroups}
+
+Instead of aggregation, the team made use of composition which, again, is not what was specified.
+\newpage
+
+\subsection{Missing Functionality}
+
+With reference to pre- and post-conditions, the following functionality has not been implemented. The code that was reviewed have no actual implementation at all; the functions addPerson() or endResearchGroupAssociation() have no code.
+
+\subsubsection{persons} 
+\begin{itemize}
+	\item addPerson: not implemented
+	\item editPersonDetails: not implemented
+\end{itemize}
+
+\subsubsection{membershipManagement}
+\begin{itemize}
+	\item endResearchGroupAssociation: not implemented
+	\item addResearchGroupAssociation: not implemented
+\end{itemize}
+
+\subsubsection{researchCategories}
+\begin{itemize}
+	\item addResearchCategory: not implemented
+	\item modifyResearchCategory: not implemented
+\end{itemize}
+
+\subsubsection{researchGroups}
+\begin{itemize}
+	\item addResearchGroup: not implemented
+	\item suspendResearchGroup: not implemented
+	\item reactivateResearchGroup: not implemented
+\end{itemize}
+
+\newpage
+
+\section{Architecture compliance analysis}
+\subsection{Software Architecture Specifications Adherence}
+With reference to architecture specifications, the implementation of Persons' code follows the given specification. As functions, such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly. Though it must be noted that some related functionality, such as "User" were not completely implemented.
+
+\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
+
+\subsubsection{Decomposition of the System}
+The code that was written is not fully separated by core architectural components. Currently, the Access Layer, Business Process Layer, Persistence Access Layer and Persistence Layer are all grouped together and are difficult to test separately. So Separation of concern is not adhered to.
+
+\subsubsection{Maintainability}
+The code is partially maintainable because no connections are made to the database connection pool to get the database schema. If changes were to be made to the database a lot of the code will need to change as well.
+
+\subsubsection{Deployability}
+This unit is currently hard coded for this specific database persistence and cannot quickly be changed to adapt to a new database.
+
+\subsubsection{Testability}
+The current JUnit testing is done with limited test cases and is not fully tested. There will be a few cases which are not tested and will fail during run time of this unit.
+
+\subsubsection{Frameworks and Technologies}
+JPA persistence is implemented, but for a JavaSE application and not JavaEE application. As soon as the database changes, much of the code will also need to change because, no connection pooling was used. Object-relational mapping, query mapping and JPQL was used in this unit but no instance of object caching and transaction support was used.
+
+\subsection{Missing aspects of the Software Architecture Specifications}
+\begin{itemize}
+	\item user: partially implemented
+	\item Object-relational mapping was not fully utilized
+	\item addResearchGroup: not implemented
+	\item addResearchCategory: not implemented
+	\item addResearchGroupAssociation: not implemented
+	\item Auditability: not implemented
+\end{itemize}
+
+\section{Conclusion}
+\subsection{Functional Testing Report}
+Overall, team bravo did not adhere to most of the design and architectural specifications. Most of the add functions not implemented, which is one of the main functions for the whole research project. Failure to add anything would mean a potentially empty database and empty objects. Many of the implemented functions were only actually partially implemented.
+\subsection{Architecture compliance analysis}
+They failed to adhere to both the Architectural and functional requirements. They lacked the ability to follow direct guidelines set out by the client. Since the adding functionalities were not added their architectures are non-existent. Many of the functions' data were hard coded, which means the reusability of the code is poor. 
+
+
 \end{document}
