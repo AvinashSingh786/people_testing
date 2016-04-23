@@ -153,6 +153,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	    \item A potential issue is that making a User an Admin is not secure since its a public function which can be exploited.
 	    \item For all the GroupAssociation operations it was not correctly implemented since they added a copy of the class (this) to a list, this is a bad approach and can lead to duplicates as well as data invalidation.
 	    \item For the User object getters and setters are implemented in the PersonImplementation.java, it should have been implemented on its own separated from Persons since it is supposed to be abstract. 
+	    \item The exception classes that were implemented did not cover all of the possible errors that can occur when creating a Person. For example, there were no checks done to verify whether a valid name was provided (it is possible to send in an empty string) and thus there was no exception class that deals with this matter.
 
 	\end{itemize}
 
