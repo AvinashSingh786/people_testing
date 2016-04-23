@@ -85,7 +85,7 @@ Functional Testing and Architecture Compliance Analysis Report
 %Content
 \setcounter{page}{1}
 \section{Introduction}
-Introductory paragraph
+This document notes the conclusions made by Team people during the testing phase, for Team Bravo's People module; with regard to functional and architectural analysis. \\
 
 \newpage
 
@@ -97,27 +97,27 @@ Introductory paragraph
 
     \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
     
-    	On first observation one can quickly see that none of the Scoped functional specifications have been implemented or do any any way represent what what specified in the Persons section. There were some attempts to test the individual classes such testing Person's constructor and mutator but no attempt at all to actually implement the functionality that is crucial to the success of the project.
+    	On first observations, one can quickly see that none of the scoped functional specifications have been implemented or in any way represent what was specified in the Persons section. There were some attempts to test the individual classes such testing Person's constructor and mutator, but no attempts were made to actually implement the functionality that is crucial to the success of the project.
 	
 		\subsubsection{persons}
-		With reference to the domain model specified in the functional specifications one can quickly identify that it was not adhered to with no specialization of Entity. Email address are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly was the aggregation of a Group entity to its composition.
+		With reference to the domain model specified in the functional specifications, one can quickly identify that it was not adhered to; with no specialization of Entity. Email addresses are stored as a string with no ability to add multiple axillary addresses. One thing that was implemented correctly, was the aggregation of a Group entity to its composition.
 
 		\subsubsection{membershipManagement}
-		As specified in the domain model both the use of a ResearchGroupAssociation enables the adding and ending of a Research Group in accordance to a ending and start date. Making use of a enumeration in order to make reference to the ResearchGroupAssociationType with is once again not as specified in the functional specifications. 
+		As specified in the domain model, both the use of a ResearchGroupAssociation enables the adding and ending of a Research Group in accordance to a start and end date. Making use of a enumeration in order to make reference to the ResearchGroupAssociationType, which is once again not as specified in the functional specifications. 
 
 		\subsubsection{researchCategories}
-		ResearchCategoryAssociation was not implemented as specified in the domain model. With no reference to ResearcherCategory and ResearcherCategoryState. Instead it appears they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion they have not adhered to the functional requirements. Additionally ResearchCategoryAssociation makes reference to a ResearchGroupType which in the domain model has nothing to do with Research Groups.
+		ResearchCategoryAssociation was not implemented as specified in the domain model; with no reference to ResearcherCategory and ResearcherCategoryState. Instead, it appears as though they made use of an enumeration of hard coded categories such as STUDENT, MEMBER and GROUPLEADER. Unless the team was instructed to implement it in this fashion, they have not adhered to the functional requirements. Additionally, ResearchCategoryAssociation makes reference to a ResearchGroupType, which in the domain model has nothing to do with Research Groups.
 
-		While the Research Category classes have been implemented and appear to work according to satisfy their "unit tests". Due to their lack of implementation addResearchCategory along with most other functional requirements can not be properly tested with reference to pre and post-conditions
+		While the Research Category classes have been implemented and appear to work according to satisfy their "unit tests", due to their lack of implementation of addResearchCategory. Along with this, most other functional requirements cannot be properly tested with reference to pre- and post-conditions
 
 		\subsubsection{researchGroups}
 
-		Instead of aggregation, the team made use of composition witch again is not what was specified.
+		Instead of aggregation, the team made use of composition which, again, is not what was specified.
 
 
     \subsection{Missing Functionality}
 
-    With reference to pre and post conditions the following functionality have not been implemented. The code that was reviewed have no actual implementation at all the functions ie. addPerson() or endResearchGroupAssociation() have no code.
+    With reference to pre- and post-conditions, the following functionality has not been implemented. The code that was reviewed have no actual implementation at all; the functions addPerson() or endResearchGroupAssociation() have no code.
 	
 		\subsubsection{persons} 
 			\begin{itemize}
@@ -148,7 +148,7 @@ Introductory paragraph
 
 \section{Architecture compliance analysis}
      \subsection{Software Architecture Specifications Adherence}
-	With reference to architecture specifiactions the implementation of the Persons, the code follows the given specifiaction as functions such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly according to the specifiaction. Though it must be noted that some related functionality such "User" were not completely implemented.
+	With reference to architecture specifications, the implementation of Persons, the code follows the given specification. As functions, such as adding persons, modifying their details, adding groupings of persons, defining and changing group membership and so on were all implemented correctly, according to the specificationn. Though it must be noted that some related functionality such "User" were not completely implemented.
 
      \subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
 
