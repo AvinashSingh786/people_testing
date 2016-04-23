@@ -120,11 +120,8 @@ This document notes the conclusions, made by Team people for the testing phase, 
 \end{itemize}
 
 \section{Functional Testing Report}
-<<<<<<< HEAD
 	\subsection{Introduction}
-	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel that this is bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimise understanding of collaborators on the project.\\
-=======
->>>>>>> origin/master
+	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel that this is bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimise understanding of collaborators on the project.
 
 	\subsection{Correctly implemented Functionality}
 	\subsubsection{Scope}
@@ -141,8 +138,8 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	From the Domain model provided to Team Alpha People the following structure was provided:
 	\begin{itemize}
 	 \item ResearchGroupAssociation - which consists of a start date,an end date and the getters and setters.
-	 \item ResearchGroupAssociationType - which is an enumeration class containing the type of user,followed the relationship in the model.
-	 \item Group - this class was just basic containing meta data about the group.
+	 \item ResearchGroupAssociationType - which is an enumeration class containing the type of user, followed the relationship in the model.
+	 \item Group - this class contains basic meta data about the group.
 	 \item Entity - this was just an empty interface which other classes either extended or implemented, there should have been at least one function in the entity which was not provided.
 	 \item User - the class that contained all the information about a user, it contained 'name', 'surname','email' which was needed.
 	 \item Organization - was just a simple class that contained meta data about the organization.
@@ -151,10 +148,10 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	 
 	\end{itemize}
 
-    \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
+    \subsection{Implemented Functionality Short-Comings (With Reference To Pre- And Post-Conditions)}
 	\begin{itemize}
 	
-	    \item During the analysis of the people module we found that there was no error checking for null object which is a potential threat to the system since there could be a failure in object creation, causing the entire system to crash.
+	    \item During the analysis of the people module we found that there was no error checking for null objects which is a potential threat to the system since there could be a failure in object creation, causing the entire system to crash.
 	    \item A potential issue is that making a User an Admin is not secure since it is a public function which can be exploited.
 	    \item For all the GroupAssociation operations, the implementation was faulty since they added a copy of the class (this) to a list. This is a bad approach and can lead to duplicates as well as data invalidation, thus not satisfying the Reliability aspect of the requirements.
 	    \item For the User object, getters and setters are implemented in the PersonImplementation.java. We feel that it should have been implemented separate from Persons since it is supposed to be abstract. 
@@ -180,7 +177,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item ResearcherCatogoryStatus - an empty interface with no implementation
 	 \end{itemize}
 
-\section{Architecture compliance analysis}
+\section{Architecture Compliance Analysis}
 	\subsection{Software Architecture Specifications Adherence}
 	\begin{itemize}
 
@@ -190,7 +187,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item JPA - this was implemented correctly and was consistent, they even created a ORM.xml for the Object Relational Mapping for the database done by the entity manager. They used an in-memory database for testing, which is an easier method and is ideal since it is only used for testing purposes.
 	\end{itemize}
 
-	\subsection{Partially complied Software Architecture Specifications (pointing out any short-comings with respect to the specification)}
+	\subsection{Partially Complied Software Architecture Specifications (Pointing Out Any Short-Comings With Respect To The Specification)}
 
 	\begin{itemize}
 
@@ -198,10 +195,9 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which goes against one of the architectural requirements.
 	\end{itemize}
 
-	\subsection{Missing aspects of the Software Architecture Specifications}
+	\subsection{Missing Aspects Of The Software Architecture Specifications}
 	\begin{itemize}
 		\item Dependency injection framework was not implemented
-<<<<<<< HEAD
 		\item Object-relational mapping was not utilized
 		\item There is no sign of resource pooling or resource recycling in the implementation
 		\item There is no support for transactions
