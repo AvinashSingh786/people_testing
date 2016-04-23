@@ -100,13 +100,26 @@ University of Pretoria
 %Content
 \setcounter{page}{1}
 \section{Introduction}
-This document notes the conclusions, made by Team people for the testing phase, for Team Alpha's people module with regard to functional and architecture analysis. \\
+This document notes the conclusions, made by Team people for the testing phase, for Team Alpha's people module with regard to functional and architecture analysis. It documents conclusions made by Team people with regard to the following points:
 
-\newpage
+\begin{itemize}
+    \item to what extent the functional requirements as per the functional specification have been met
+        \begin{itemize}
+            \item the functionality which has been correctly implemented
+            \item short-comings of the implemented functionality (with     reference to the pre- and post-conditions)
+            \item missing functionality
+        \end{itemize}
+        
+    \item to what extent the module implementation complies to the specified architecture
+        \begin{itemize}
+            \item which aspects of the software architecture specification were adhered to
+            \item which aspects of the software architecture specification were partially complied to 
+            \item any short comings with respect to the specification
+            \item which aspects of the software architecture were not implemented
+        \end{itemize}
+\end{itemize}
 
 \section{Functional Testing Report}
-	\subsection{Introduction}
-	After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimize understanding of collaborators on the project.\\
 
 	\subsection{Correctly implemented Functionality}
 	\subsubsection{Scope}
@@ -131,12 +144,7 @@ This document notes the conclusions, made by Team people for the testing phase, 
 	 \item ResearcherCatogoryAssociation - was just a simple class that contained the effective date and the type
 	 \item ResearcherCatogory - has the relationship with ResearcherCatogoryStatus and ResearcherCatogoryAssociation as a middle-man for communication between them
 	 
-	 
-	 
-
 	\end{itemize}
-
-	
 
     \subsection{Implemented Functionality short-comings (with reference to pre- and post-conditions)}
 	\begin{itemize}
@@ -166,23 +174,13 @@ This document notes the conclusions, made by Team people for the testing phase, 
 		\item EmailAddress - there was no email address class implemented or created anywhere however they just had a string containing the email address.
 		\item ResearcherCatogoryStatus - an empty interface with no implementation
 	 \end{itemize}
-	 
-      
-    
-    
-    
-
-   % \newpage
 
 \section{Architecture compliance analysis}
 	\subsection{Software Architecture Specifications Adherence}
 	\begin{itemize}
 
-	\item Persistence was implemented correctly in which they had id generation, which provides unique access to a specific object so there can be modification, however this module did not implement this and could have been done without much effort. 
-
-			\item In their code they provided well for persistence.
-		\item JPA - this was implemented correctly and was consistent, they even created a orm.xml for the Object Relational Mapping for the database done by the entity manager. They used a in memory database for testing, which is an easier method and is ideal since it is only used for testing purposes.
-	\item@TODO
+	    \item Persistence was implemented correctly in which they had id generation, which provides unique access to a specific object so there can be modification, however this module did not implement this and could have been done without much effort. 
+		\item JPA - this was implemented correctly and was consistent, they created a orm.xml for the Object Relational Mapping for the database done by the entity manager. They used a in memory database for testing, which is an easier method and is ideal since it is only used for testing purposes.
 
 	\end{itemize}
 
@@ -192,36 +190,19 @@ This document notes the conclusions, made by Team people for the testing phase, 
 
 		\item Unit tests were not implemented correctly and took great difficulty to get working, unit test were not structured properly and was not testing all the aspects of their code implemented, their unit test was also very trivial since they used persistence they could have done more testing but they only created 3 Mock objects and put it into the database and only tested if they could access the last one, it could be that the database was incorrectly setup which will influence the overall test.
 		\item Although the team had a pom file and a Maven-looking project, they implemented Ant builds for the project instead, which violates one of the architectural requirements.
-		\item@TODO
 	\end{itemize}
 
 	\subsection{Missing aspects of the Software Architecture Specifications}
 	\begin{itemize}
 		\item Dependency injection framework was not implemented
 		\item No method was used to implement connection pooling to the database
-		\item Object-relational mapping was not utilized
 		\item There is no sign of resource pooling in the implementation
 		\item There is no support for transactions
 		\item There is no sign of JPQL queries which indicates that query mapping was not done
-		\item@TODO
 	\end{itemize}
 	
 
-
-
-
-
-
-
-
-
-
-
-
-   	% \newpage
-
 \section{Conclusion}
-Our overall conclusion was that the code was very convoluted and complex in many cases where it could be very simple, easy to understand and easy to implement. The code was not well documented which caused great difficulty for us to understand and figure out. The main interface User.java we felt was very incomplete as it should provide a means to make use of all the functionality specified in the scope which it did not. We felt this group lacked the understanding of how the system operates and how the People module would be incorporated into the system. They did not provide any functionality towards management of Rearch Groups. They provided management for Researcher Categories in the People interface which supports our first statement of their code being convoluted. They catered well for Membership Management of individual people
-@COMPLETE
+After studying the code, the first conclusion to be arrived at was the fact that functionality was not consistent with the scope provided in the Application Requirements Design Document. We feel this is a bad practice as the design documentation provides a set of standards which should be adhered to, in order to optimize understanding of collaborators on the project.  Our overall conclusion was that the code was very convoluted and complex in many cases where it could be very simple, easy to understand and easy to implement. The code was not well documented which caused great difficulty for us to understand and figure out. The main interface User.java we felt was very incomplete as it should provide a means to make use of all the functionality specified in the scope which it did not. We felt this group lacked the understanding of how the system operates and how the People module would be incorporated into the system. They did not provide any functionality towards management of Research Groups. They provided management for Researcher Categories in the People interface which supports our first statement of their code being convoluted. They catered well for Membership Management of individual people.
 
 \end{document}
